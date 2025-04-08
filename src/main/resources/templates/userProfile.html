@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>OneUser</title>
+</head>
+<body>
+<p th:utext="'Эта страница пользователя ' + '<br>' + ${user.name}"></p>
+<a th:href="@{/edit(id=${user.id})}">Изменить</a>
+
+<form th:method="GET" th:action="@{/delete}">
+    <input type="hidden" name="id" th:value="${user.id}">
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>

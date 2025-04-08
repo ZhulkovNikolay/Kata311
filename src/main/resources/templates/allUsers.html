@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>AllUsers</title>
+</head>
+<body>
+
+<div th:each="user: ${users}">
+    <a th:href="@{/user(id=${user.id})}"
+       th:text="${user.name}">someUser</a>
+
+    <a th:href="@{/edit(id=${user.id})}"
+       class="edit-btn">Edit</a>
+</div>
+
+<br/>
+<hr/>
+<a href="/create">Create new User</a>
+
+</body>
+</html>
